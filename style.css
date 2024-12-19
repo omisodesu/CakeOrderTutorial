@@ -1,0 +1,497 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #222;
+}
+
+/* ヘッダースタイル */
+.header {
+  position: relative;
+  width: 100%;
+}
+
+.header-bg {
+  background-image: url('img/header2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 60vh;
+}
+
+/* ナビゲーションバー */
+.nav-container {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+.brand a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+
+.brand-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  margin-left: 20px;
+}
+
+.nav-list a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  padding: 5px 0;
+}
+
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s;
+}
+
+.nav-list a:hover::after {
+  width: 100%;
+}
+
+.nav-toggle {
+  background: none;
+  border: none;
+  display: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  width: 30px;
+  height: 24px;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  background: #fff;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  transition: 0.3s ease;
+}
+.hamburger {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hamburger::before {
+  top: -8px;
+}
+.hamburger::after {
+  top: 8px;
+}
+
+/* nav-overlay フルスクリーン表示 */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  z-index: 998;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.nav-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+.nav.opened .hamburger {
+  background: transparent;
+}
+.nav.opened .hamburger::before {
+  transform: rotate(45deg) translateY(8px);
+}
+.nav.opened .hamburger::after {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* モバイル時メニュー */
+@media (max-width: 768px) {
+  .nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: linear-gradient(to bottom, #af3b57, #f78fa7);
+      transition: transform 0.3s ease;
+      transform: translateX(100%);
+      z-index: 999;
+  }
+  .nav.opened {
+      transform: translateX(0);
+  }
+
+  .nav-toggle {
+      display: block;
+  }
+
+  .nav-list {
+      flex-direction: column;
+  }
+
+  .nav-list li {
+      margin: 20px 0;
+  }
+
+  .nav-list a {
+      font-size: 1.5rem;
+  }
+}
+
+/* ヒーローエリア */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: url('img/hero.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  margin: 0 0 10px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* セクション共通 */
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #af3b57;
+  text-align: center;
+}
+
+/* ご予約前の事前確認セクション */
+.notice-section .notice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  line-height: 1.8;
+}
+
+.notice-section .notice-list li {
+  padding: 15px;
+  border: 1px solid #8b1c3b;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 注文の流れセクション */
+.steps-section {
+  background: #fff0f5;
+  padding: 40px 0;
+}
+
+/* アコーディオン */
+.accordion {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  background: #ffe4e1;
+  border: none;
+  padding: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: #af3b57;
+  transition: background 0.3s;
+}
+.accordion-header:focus {
+  outline: none;
+}
+.accordion-header:hover {
+  background: #ffcfd2;
+}
+
+.accordion-content {
+  display: none;
+  padding: 20px;
+  background: #fff;
+  line-height: 1.8;
+}
+
+.step-image {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* お問い合わせセクション */
+.contact-section {
+  text-align: center;
+}
+
+.mail-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #0066cc;
+  text-decoration: none;
+}
+.mail-link:hover {
+  text-decoration: underline;
+}
+
+/* フッター */
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 40px 0 20px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.footer-company-info,
+.footer-links,
+.footer-social {
+  flex: 1 1 30%;
+  margin: 0 10px;
+  text-align: left;
+}
+
+/* 会社情報 */
+.footer-company-info p {
+  margin: 5px 0;
+  line-height: 1.6;
+}
+.footer-company-info a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-company-info a:hover {
+  text-decoration: underline;
+}
+
+/* 利用規約、プライバシーポリシー */
+.footer-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-links li {
+  margin: 5px 0;
+}
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: border-bottom 0.3s;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ソーシャルメディアアイコン */
+.footer-social ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.footer-social li {
+  margin-right: 10px;
+}
+.footer-social img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+.footer-social a:hover img {
+  transform: scale(1.1);
+}
+
+/* コピーライト部 */
+.footer > .container {
+  text-align: center;
+}
+
+/* ご予約前の事前確認 & お問い合わせセクションの強調表示 */
+.notice-section,
+.contact-section {
+  background: #fef9f9;
+  border: 1px solid #eed5d5;
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.notice-section h2,
+.contact-section h2 {
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.notice-section h2::after,
+.contact-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 50px;
+  height: 2px;
+  background: #af3b57;
+  transform: translateX(-50%);
+}
+
+.contact-section p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* お問い合わせメールリンク強調 */
+.contact-section .mail-link {
+  font-size: 1.1rem;
+  color: #af3b57;
+  text-decoration: none;
+  border-bottom: 1px solid #af3b57;
+  transition: color 0.3s, border-bottom-color 0.3s;
+}
+.contact-section .mail-link:hover {
+  color: #f78fa7;
+  border-bottom-color: #f78fa7;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .hero {
+      height: 250px;
+  }
+
+  .hero-title {
+      font-size: 2rem;
+  }
+
+  .hero-subtitle {
+      font-size: 1rem;
+  }
+
+  .step-image {
+      margin: 10px 0;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-company-info,
+  .footer-links,
+  .footer-social {
+    flex: 1 1 100%;
+    margin: 10px 0;
+    text-align: left;
+  }
+
+  .footer-social ul {
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+    <title>ケーキ注文LP</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-bg">
+            <div class="nav-container">
+                <div class="brand">
+                    <a href="#">
+                        <img src="img/gadandan_logomark.png" alt="Logo" class="logo">
+                        <span class="brand-text">いつでもケーキ</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#steps">注文の流れ</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-overlay"></div>
+            </div>
+
+            <div class="hero">
+                <div class="hero-overlay">
+                    <h1 class="hero-title">ケーキ注文の流れ</h1>
+                    <p class="hero-subtitle">簡単3ステップでケーキをご注文いただけます</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="notice-section">
+        <div class="container">
+            <h2>ご予約前の事前確認</h2>
+            <ul class="notice-list">
+                <li>ご予約にGoogleのメールアドレスが必要となります。お持ちでない方は作成後にご利用ください。</li>
+                <li>LINEなどアプリケーションから直接ケーキWEB予約URLでサイトを開かれた際、スマートフォンの設定により正しく表示されない場合があります。その場合は、デフォルトのブラウザで開いてください。</li>
+                <li>現在サービスのアップデート中です。エラーがありましたら、ページ最後のメールアドレスよりご連絡お願いします。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="steps-section" id="steps">
+        <div class="container">
+            <h2>注文の流れ</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">STEP 1: ケーキを選んで注文</button>
+                    <div class="accordion-content">
+                        <p>HPの画面のWEB予約ボタンをタップすると、ケーキの予約ページへ遷移します。<br>
+                        ご希望の商品を選択し、メッセージプレートなどオプションがあれば入力し「カートに追加」後、「レジに進む」をタップします。</p>
+                        <img src="img/step1-1.png" alt="step1" class="step-image"/>
+                        <img src="img/step1-2.png" alt="step2" class="step-image"/>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">STEP 2: ログインと注文確認</button>
+                    <div class="accordion-content">
+                        <p>「レジに進む」をタップするとログイン画面へ遷移します。<br>
+                        Googleアイコンを押してログインを行い、メールアドレスを確認したら次へ進みます。</p>
+                        <img src="img/step2-1.png" alt="step3" class="step-image"/>
+                        <img src="img/step2-2.png" alt="step4" class="step-image"/>
+                        <img src="img/step2-3.png" alt="step4" class="step-image"/>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">STEP 3: 支払いと完了</button>
+                    <div class="accordion-content">
+                        <p>ログイン後、カート内容を確認して「レジに進む」をタップします。<br>
+                        受け取り時間などを設定して「購入する」をタップするとPayPalで支払い画面へ移行します。支払い後、元の画面に戻り「支払い完了」が表示されます。最後にメールを確認して注文完了です。</p>
+                        <img src="img/step3-1.png" alt="step5" class="step-image"/>
+                        <img src="img/step3-2.png" alt="step6" class="step-image"/>
+                        <img src="img/step3-3.png" alt="step7" class="step-image"/>
+                        <img src="img/step8.png" alt="step8" class="step-image"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2>お問い合わせ</h2>
+            <p>WEB予約システムのご利用にあたり、不明な点やエラーが発生した場合は対応させていただきます。</p>
+            <p>お手数ですが、下記のメールアドレスまでお問い合わせください。よろしくお願いいたします。</p>
+            <a href="mailto:info@gadandan.co.jp" class="mail-link">info@gadandan.co.jp</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+          <!-- 会社情報 -->
+          <div class="footer-company-info">
+              <p><strong>会社名：</strong>がだんだん株式会社</p>
+              <p><strong>所在地：</strong>愛知県名古屋市緑区鳴海町砦19 砦ビル301</p>
+              <p><strong>連絡先：</strong><a href="mailto:info@gadandan.co.jp">info@gadandan.co.jp</a></p>
+          </div>
+  
+          <!-- 利用規約、プライバシーポリシーへのリンク -->
+          <div class="footer-links">
+              <ul>
+                  <li><a href="#">利用規約</a></li>
+                  <li><a href="#">プライバシーポリシー</a></li>
+              </ul>
+          </div>
+  
+          <!-- ソーシャルメディアアイコン -->
+          <div class="footer-social">
+              <ul>
+                  <li><a href="#" aria-label="Instagram"><img src="img/instagram-icon.png" alt="Instagram"></a></li>
+                  <li><a href="#" aria-label="Twitter"><img src="img/twitter-icon.png" alt="Twitter"></a></li>
+                  <li><a href="#" aria-label="Facebook"><img src="img/facebook-icon.png" alt="Facebook"></a></li>
+              </ul>
+          </div>
+      </div>
+  
+      <div class="container">
+          <p>&copy; 2024 いつでもケーキ使用方法</p>
+      </div>
+  </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
