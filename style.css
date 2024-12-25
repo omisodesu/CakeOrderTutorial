@@ -82,7 +82,7 @@ body {
 }
 
 .nav-list li {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .nav-list a {
@@ -91,7 +91,7 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
-  padding: 5px 0;
+  padding: 10px 10px;
 }
 
 .nav-list a::after {
@@ -116,8 +116,8 @@ body {
   cursor: pointer;
   padding: 0;
   position: relative;
-  width: 30px;
-  height: 24px;
+  width: 24px;
+  height: 18px;
 }
 
 .hamburger,
@@ -126,7 +126,7 @@ body {
   content: "";
   background: #fff;
   position: absolute;
-  width: 100%;
+  width: 80%;
   height: 2px;
   left: 0;
   transition: 0.3s ease;
@@ -136,10 +136,10 @@ body {
   transform: translateY(-50%);
 }
 .hamburger::before {
-  top: -8px;
+  top: -6px;
 }
 .hamburger::after {
-  top: 8px;
+  top: 6px;
 }
 
 /* nav-overlay フルスクリーン表示 */
@@ -164,6 +164,11 @@ body {
       position: relative;
       z-index: 1000;
   }
+
+  .nav-container {
+      padding: 0.5rem 0; /* 上下0.5remだけにする */
+    }
+
 
   .nav {
       position: fixed;
@@ -197,25 +202,31 @@ body {
   .nav-list a {
       font-size: 1.2rem;
   }
+
+  .accordion-header {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* ヒーローエリア */
 .hero {
   position: relative;
   width: 100%;
-  padding: 20px 10px;
+  padding:  5px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.4);
+  /*background: rgba(255, 0, 0, 0.4);*/
 }
 
 .hero-overlay {
   background: rgba(255, 255, 255, 0.9);
-  padding: 1.5rem;
+  padding: 1rem;
   text-align: center;
   border-radius: 8px;
-  max-width: 80%;
+  max-width: 90%;
   margin: 0 auto;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -246,6 +257,10 @@ h2 {
   font-size: 1.8rem;
   color: #af3b57;
   text-align: center;
+}
+
+.contact-section p {
+  text-align: left;
 }
 
 /* ご予約前の事前確認セクション */
@@ -469,7 +484,7 @@ h2 {
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
   .hero {
-      height: 250px;
+      /*height: 250px;*/
   }
 
   .hero-title {
