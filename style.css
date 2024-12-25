@@ -13,7 +13,7 @@ body {
 }
 
 .header-bg {
-  background-image: url('img/header2.png');
+  background-image: url('img/header3.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -222,7 +222,7 @@ body {
 }
 
 .hero-overlay {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
   padding: 1rem;
   text-align: center;
   border-radius: 8px;
